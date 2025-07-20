@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATPL Question Bank</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🔐 Password Screen -->
+  <div id="lockScreen">
+    <h2>Enter Access Code</h2>
+    <input type="password" id="accessInput" placeholder="Password" />
+    <button onclick="checkPassword()">Enter</button>
+    <p id="errorMsg" style="color: red;"></p>
+  </div>
+
+  <!-- Quiz Content -->
+  <div id="quizApp" style="display: none;">
+    <div class="top-bar">
+      <div class="subject-header">
+        <h1>ATPL Question Bank</h1>
+        <select id="subjectSelect">
+          <option disabled selected>Choose a subject</option>
+        </select>
+        <span id="questionIndex">1 / 73</span>
+        <label class="toggle">
+          <input type="checkbox" id="themeToggle" /> Dark Mode
+        </label>
+        <label class="shuffle-toggle">
+          <input type="checkbox" id="shuffleToggle" checked /> Shuffle questions
+        </label>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="question-panel">
+        <div class="question-box">
+          <p id="questionText">Question will appear here...</p>
+          <ul id="optionsList" class="option-list"></ul>
+        </div>
+
+        <div class="nav-buttons">
+          <button id="prevBtn">Previous</button>
+          <button id="nextBtn">Next</button>
+          <button id="flagBtnNav">🚩 Flag</button>
+          <button id="finishBtn">Finish</button>
+        </div>
+
+        <div id="resultScreen" class="hidden">
+          <p id="scoreText"></p>
+          <button id="restartBtn">Restart</button>
+          <button id="retryWrongBtn">Retry Wrong Answers</button>
+          <button id="reviewFlaggedBtn">Review Flagged Questions</button>
+          <button id="backToFullQuizBtn">Back to Full Quiz</button>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="actions">
+          <button class="side-btn">Save Test</button>
+          <button id="finishBtnSide" class="side-btn">Finish Test</button>
+        </div>
+        <div id="pagination" class="pagination-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
